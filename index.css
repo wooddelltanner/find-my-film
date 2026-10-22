@@ -29,12 +29,29 @@ header {
 
 input {
     margin-left: 6%;
-    margin-right: 6%;
-    width: 100%;
+    width: 70%;
     height: 3em;
     border: #D1D5DB 1px solid;
-    border-radius: 6px;
+    border-right: none;
+    border-radius: .5em 0 0 .5em;
     transform: translateY(-20px);
+    background-image: url(./images/search-icon.png);
+    background-repeat: no-repeat;
+    background-position: left .75em center;
+    background-size: 1.5em;
+    padding-left: 3em;
+    color: #6B7280;
+}
+
+button {
+    margin-right: 6%;
+    width: 30%;
+    height: 3em;
+    border: #D1D5DB 1px solid;
+    border-radius: 0 .5em .5em 0;
+    transform: translateY(-20px);
+    background-color: #F9FAFB;
+    color: #374151;
 }
 
 .container {
@@ -53,7 +70,6 @@ input {
 }
 
 form {
-    width: 100%;
     background-color: white;
     min-height: 70vh;
 }
