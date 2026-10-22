@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif ;
+}
+
+h1 {
+    margin-left: 6%;
+}
+
+h2 {
+    margin-right: 6%;
+}
+
+.container {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    background-color: blanchedalmond;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+form {
+    width: 100%;
+}
