@@ -4,11 +4,36 @@ body {
 }
 
 h1 {
+    font-size: 3rem;
     margin-left: 6%;
 }
 
 h2 {
+    font-size: 1rem;
     margin-right: 6%;
+}
+
+h2:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+header {
+    height: 250px;
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./images/header.png);
+    background-size: cover;
+    background-position: 0 -200px;
+    color: white;
+    margin-bottom: -20px;
+}
+
+input {
+    margin-left: 6%;
+    margin-right: 6%;
+    width: 100%;
+    height: 3em;
+    border: #D1D5DB 1px solid;
+    border-radius: 6px;
 }
 
 .container {
@@ -16,7 +41,6 @@ h2 {
     margin-left: auto;
     margin-right: auto;
     align-items: center;
-    background-color: blanchedalmond;
 }
 
 .flex {
