@@ -22,7 +22,9 @@ h3 {
 }
 
 h4 {
-
+    font-size: 1.3rem;
+    color: #000000;
+    margin-top: 0;
 }
 
 a {
@@ -85,6 +87,7 @@ button:hover {
     max-width: 640px;
     margin-left: auto;
     margin-right: auto;
+    box-sizing: border-box;
 }
 
 .center {
@@ -99,26 +102,38 @@ main {
     background-color: white;
     min-height: 70vh;
     margin-top: -40px;
+    padding-top: 60px;
 }
 
 .empty {
     justify-content: center;
     flex-direction: column;
-}
+}s
 
 img {
     object-fit: none;
 }
 
-main div {
-    display: flex;
+.film-card {
+
+}
+
+.film-desc {
     align-items: center;
-    gap: 0.5em;
 }
 
 #movie-poster {
     max-width: 20%;
     height: auto;
     object-fit: contain;
+    margin-left: 6%;
+    margin-right: 3%;
+    border-radius: .3em;
 }
+
+.contain {
+    width: auto;
+    height: 1em;
+}
+
 
