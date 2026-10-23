@@ -19,7 +19,7 @@
             <button type="submit">Search</button>
         </form>
 
-        <!-- <main class="flex container center empty">
+        <!-- <main class="flex vertical container center vertical-center">
             <img src="./images/film-icon.png">
             <h2>Start Exploring</h2>
         </main> -->
@@ -27,9 +27,23 @@
         <main class="container">
             <div class=" flex film-card">
                 <img id="movie-poster" src="./images/blade-runner-ex.png">
-                <div class="flex film-desc">
-                    <h4>Blade Runner</h4>
-                    <img class="contain" src="./images/star-rating.png">
+                <div class="flex vertical vertical-center gap">
+                    <div class="flex film-title">
+                        <h4>Blade Runner</h4>
+                        <div class="flex">
+                            <img class="contain" src="./images/star-rating.png">
+                            <p class="small-text">8.1</p>
+                        </div>
+                    </div>
+                    <div class="flex gap center">
+                        <p class="small-text">117 min</p>
+                        <p class="small-text">Action, Drama, Sci-fi</p>
+                        <div class="flex small-gap center hover">
+                            <img src="./images/add-icon.png">
+                            <p class="small-text">Watchlist</p>
+                        </div>
+                    </div>
+                    <p class="film-desc">A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to Earth to find their creator.</p>
                 </div>
             </div>
         </main>
