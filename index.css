@@ -14,6 +14,11 @@ h2 {
     margin-right: 6%;
 }
 
+h3 {
+    text-align: center;
+    color: #DFDDDD;
+}
+
 h2:hover {
     text-decoration: underline;
     cursor: pointer;
@@ -25,6 +30,13 @@ header {
     background-size: cover;
     background-position: 0 -200px;
     color: white;
+    justify-content: space-between;
+}
+
+form {
+    position: relative;
+    z-index: 10;
+    transform: translateY(-20px);
 }
 
 input {
@@ -34,7 +46,6 @@ input {
     border: #D1D5DB 1px solid;
     border-right: none;
     border-radius: .5em 0 0 .5em;
-    transform: translateY(-20px);
     background-image: url(./images/search-icon.png);
     background-repeat: no-repeat;
     background-position: left .75em center;
@@ -49,9 +60,12 @@ button {
     height: 3em;
     border: #D1D5DB 1px solid;
     border-radius: 0 .5em .5em 0;
-    transform: translateY(-20px);
     background-color: #F9FAFB;
     color: #374151;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 .container {
@@ -66,10 +80,25 @@ button {
 
 .flex {
     display: flex;
-    justify-content: space-between;
 }
 
-form {
+main {
+    display: flex;
+    flex-direction: column;
     background-color: white;
     min-height: 70vh;
 }
+
+img {
+    object-fit: none;
+    margin-bottom: .3em;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: -40px;
+}
+
+
