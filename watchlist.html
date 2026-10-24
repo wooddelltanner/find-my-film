@@ -19,11 +19,35 @@
             <button type="submit">Search</button>
         </form>
 
-        <main class="flex container center empty">
+        <!-- <main class="flex container center empty">
             <h2>Your watchlist is looking a little empty...</h2>
             <div>
                 <img src="./images/add-icon.png">
                 <h3>Let's add some movies!</h3>
+            </div>
+        </main> -->
+
+        <main class="container">
+            <div class=" flex film-card">
+                <img id="movie-poster" src="./images/blade-runner-ex.png">
+                <div class="flex vertical vertical-center gap">
+                    <div class="flex film-title">
+                        <h4>Blade Runner</h4>
+                        <div class="flex">
+                            <img class="contain" src="./images/star-rating.png">
+                            <p class="small-text">8.1</p>
+                        </div>
+                    </div>
+                    <div class="flex gap center">
+                        <p class="small-text">117 min</p>
+                        <p class="small-text">Action, Drama, Sci-fi</p>
+                        <div class="flex small-gap center hover">
+                            <img class="watchlist" src="./images/subtract-icon.png">
+                            <p class="small-text">Watchlist</p>
+                        </div>
+                    </div>
+                    <p class="film-desc">A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to Earth to find their creator.</p>
+                </div>
             </div>
         </main>
 
