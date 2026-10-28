@@ -1,10 +1,8 @@
 const searchBar = document.getElementById(`search-bar`)
 const submitBtn = document.getElementById(`submit-btn`)
-const submitWatchlistBtn = document.getElementById('submit-watchlist-btn')
 const filmDisplay = document.getElementById('film-display-area')
 
 submitBtn.addEventListener(`click`, searchFilm)
-submitWatchlistBtn.addEventListener('click', searchWatchlist)
 
 filmDisplay.innerHTML = `
     <div class="flex vertical center vertical-center">
@@ -47,8 +45,4 @@ async function searchFilm(e) {
     filmDisplay.innerHTML = filmHtml
 }
 
-function searchWatchlist(e) {
-    e.preventDefault()
 
-    console.log('Clicked!')
-}
