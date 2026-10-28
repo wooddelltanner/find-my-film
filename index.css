@@ -189,4 +189,10 @@ img {
     width: auto;
 }
 
+.flex.vertical.center {
+    justify-content: center; 
+    min-height: 50vh;      
+}
+
+
 

@@ -1,8 +1,16 @@
 const searchBar = document.getElementById(`search-bar`)
 const submitBtn = document.getElementById(`submit-btn`)
+const submitWatchlistBtn = document.getElementById('submit-watchlist-btn')
 const filmDisplay = document.getElementById('film-display-area')
 
 submitBtn.addEventListener(`click`, searchFilm)
+submitWatchlistBtn.addEventListener('click', searchWatchlist)
+
+filmDisplay.innerHTML = `
+    <div class="flex vertical center vertical-center">
+        <img src="./images/film-icon.png">
+        <h2>Start Exploring</h2>
+    </div>`
 
 async function searchFilm(e) {
     e.preventDefault()
@@ -37,5 +45,10 @@ async function searchFilm(e) {
             </div>`
     }
     filmDisplay.innerHTML = filmHtml
-    console.log(data)
+}
+
+function searchWatchlist(e) {
+    e.preventDefault()
+
+    console.log('Clicked!')
 }
