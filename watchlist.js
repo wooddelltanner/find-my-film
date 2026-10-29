@@ -1,3 +1,10 @@
+let savedText = localStorage.getItem("watchlist")
+let watchlist = []
+
+if (savedText !== null) {
+    watchlist = JSON.parse(savedText)
+}
+
 const submitBtn = document.getElementById(`submit-btn`)
 const filmDisplay = document.getElementById('film-display-area')
 
@@ -15,5 +22,6 @@ filmDisplay.innerHTML = `
 function searchWatchlist(e) {
     e.preventDefault()
 
-    console.log('Clicked!')
 }
+
+console.log(watchlist)

@@ -1,7 +1,13 @@
+let savedText = localStorage.getItem("watchlist")
+let watchlist = []
+
+if (savedText !== null) {
+    watchlist = JSON.parse(savedText)
+}
+
 const searchBar = document.getElementById(`search-bar`)
 const submitBtn = document.getElementById(`submit-btn`)
 const filmDisplay = document.getElementById('film-display-area')
-const addToWatchlist = document.getElementById('add-to-watchlist')
 
 submitBtn.addEventListener(`click`, searchFilm)
 
@@ -10,6 +16,9 @@ filmDisplay.innerHTML = `
         <img src="./images/film-icon.png">
         <h2>Start Exploring</h2>
     </div>`
+
+
+let currentResults = []
 
 async function searchFilm(e) {
     e.preventDefault()
@@ -25,7 +34,7 @@ async function searchFilm(e) {
         let filmPosterHtml 
         
         if (film.Poster !== 'N/A') {
-            filmPosterHtml = `<img class="movie-poster" src="${film.Poster}" onerror = "this.onerror = null; this.src = '/images/poster-placeholder.png'; this.classList.add('border')">`
+            filmPosterHtml = `<img class="movie-poster" src="${film.Poster}" onerror = "this.onerror = null; this.src = './images/poster-placeholder.png'; this.classList.add('border')">`
         } else {
             filmPosterHtml = `<img class="movie-poster border" src="./images/poster-placeholder.png">`
         }
@@ -44,7 +53,7 @@ async function searchFilm(e) {
                     <div class="flex gap center">
                         <p class="small-text">${details.Runtime}</p>
                         <p class="small-text">${details.Genre}</p>
-                        <div id="add-to-watchlist" class="flex small-gap center hover">
+                        <div class="flex small-gap center hover add-to-watchlist" data-imdbid="${film.imdbID}">
                             <img class="watchlist" src="./images/add-icon.png">
                             <p class="small-text">Watchlist</p>
                         </div>
@@ -52,8 +61,38 @@ async function searchFilm(e) {
                     <p class="film-desc">${details.Plot}</p>
                 </div>
             </div>`
+
+        currentResults.push(details)
     }
     filmDisplay.innerHTML = filmHtml
 }
+
+filmDisplay.addEventListener('click', function(e) {
+    let addButton = e.target.closest("add-to-watchlist")
+
+    if (addButton !== null) {
+        let filmId = e.target.getAttribute("data-imdbid")
+
+        let filmToAdd = null
+        for (let film of currentResults) {
+            if (film.imdbID === filmId) {
+                filmToAdd = film
+            }
+        }
+       
+        let alreadySaved = false
+        for (let savedFilm of watchlist) {
+            if (savedFilm.imdbID === filmId) {
+                alreadySaved = true
+            }
+        }
+
+        if (alreadySaved == false) {
+            watchlist.push(filmToAdd)
+            let listAsText = JSON.stringify(watchlist)
+            localStorage.setItem("watchlist", listAsText)
+        }
+    }
+})
 
 
