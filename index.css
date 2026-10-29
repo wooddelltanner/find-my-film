@@ -145,12 +145,16 @@ img {
     gap: .6em;
 }
 
-#movie-poster {
+.movie-poster {
     width: 22%;
     min-height: auto;
     object-fit: contain;
     margin-right: 3%;
     border-radius: .3em;
+}
+
+.border {
+    border: 1px dashed #808080;
 }
 
 .contain {

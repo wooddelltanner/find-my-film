@@ -1,6 +1,7 @@
 const searchBar = document.getElementById(`search-bar`)
 const submitBtn = document.getElementById(`submit-btn`)
 const filmDisplay = document.getElementById('film-display-area')
+const addToWatchlist = document.getElementById('add-to-watchlist')
 
 submitBtn.addEventListener(`click`, searchFilm)
 
@@ -19,26 +20,36 @@ async function searchFilm(e) {
     let filmHtml = ``
 
     for (let film of data.Search) {
+        const detailsRes = await fetch (`https://www.omdbapi.com/?apikey=1eeae7c0&i=${film.imdbID}`)
+        const details = await detailsRes.json()
+        let filmPosterHtml 
+        
+        if (film.Poster !== 'N/A') {
+            filmPosterHtml = `<img class="movie-poster" src="${film.Poster}" onerror = "this.onerror = null; this.src = '/images/poster-placeholder.png'; this.classList.add('border')">`
+        } else {
+            filmPosterHtml = `<img class="movie-poster border" src="./images/poster-placeholder.png">`
+        }
+
         filmHtml += `
             <div class=" flex film-card">
-                <img id="movie-poster" src="${film.Poster}">
+                ${filmPosterHtml}
                 <div class="flex vertical vertical-center gap">
                     <div class="flex film-title">
                         <h4>${film.Title}</h4>
                         <div class="flex">
                             <img class="contain" src="./images/star-rating.png">
-                            <p class="small-text">8.1</p>
+                            <p class="small-text">${details.imdbRating}</p>
                         </div>
                     </div>
                     <div class="flex gap center">
-                        <p class="small-text">117 min</p>
-                        <p class="small-text">Action, Drama, Sci-fi</p>
-                        <div class="flex small-gap center hover">
+                        <p class="small-text">${details.Runtime}</p>
+                        <p class="small-text">${details.Genre}</p>
+                        <div id="add-to-watchlist" class="flex small-gap center hover">
                             <img class="watchlist" src="./images/add-icon.png">
                             <p class="small-text">Watchlist</p>
                         </div>
                     </div>
-                    <p class="film-desc">A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to Earth to find their creator.</p>
+                    <p class="film-desc">${details.Plot}</p>
                 </div>
             </div>`
     }
